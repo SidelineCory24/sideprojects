@@ -1,0 +1,25 @@
+body {
+    font-family: cursive;
+    background: url("https://cdn.dribbble.com/users/1131838/screenshots/9784276/nba_kobe_dribbble_012720.png");
+    background-size: 100% 100%;
+}
+
+h4 {
+    color: #FDB927;
+}
+
+.searchBtn {
+    color: white;
+    background-color: #552583;
+    font-family: cursive;
+    font-weight: bold;
+    width: 9%;
+    border-color: #FDB927;
+}
+
+.searchBtn:hover {
+    color: #552583;
+    background-color: #FDB927;
+    border-color: white;
+}
+
