@@ -22,7 +22,7 @@ To do a new search, simply click the "search" button again.
 
 ### Build Requirements:
 1. Latest version of Google Chrome
-2. Open the "index.html" file
+2. Open the "/your/file/location/index.html" file in Google Chrome
 3. Click the search button
 
 
