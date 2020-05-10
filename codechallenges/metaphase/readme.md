@@ -1,8 +1,8 @@
-#MetaPhase Consulting Code Challenge
+# MetaPhase Consulting Code Challenge
 
 API: https://www.balldontlie.io/#introduction
 
-##Overview:
+## Overview:
 This script returns an NBA players statistics for the 2019-2020 season and displays them on a chart.
 
 Initially, only a header and search button are displayed. Clicking the search button will prompt the user to enter a name.
@@ -14,13 +14,13 @@ A successful search will create a bar chart of the players stats. An alert will 
 To do a new search, simply click the "search" button again.
 
 
-###Files needed (in the same directory):
+### Files needed (in the same directory):
 1. index.html
 2. styles.ccs
 3. app.js
 
 
-###Build Requirements:
+### Build Requirements:
 1. Latest version of Google Chrome
 2. Open the "index.html" file
 3. Click the search button
