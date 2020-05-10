@@ -9,12 +9,10 @@
 </head>
 
 <body>
-    <h4 class="header">Click the button to search for an NBA Player</h4>
+    <h4 class="header">Enter a name and click the button to search for an NBA Player</h4>
     <div>
-        <form id="form">
-            <input class="searchBtn" type="button" onclick="createChart()" value="search"></button>
-        </form>
-        <p id="test"></p>
+        <input type="search" id="playerSearch" />
+        <button class="searchBtn" type="button" onclick="createChart()" value="search">search</button>
     </div>
 
     <canvas id="myChart" width="24" height="8"></canvas>

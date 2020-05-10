@@ -1,7 +1,8 @@
 var myChart;
 
 async function createChart() {
-    const playerData = await getPlayer();
+    const name = document.getElementById("playerSearch").value;
+    const playerData = await getPlayer(name);
     const context = document.getElementById('myChart').getContext('2d');
 
     playerLabel = playerData.player.firstName + ' ' + playerData.player.lastName + ' Stats: 2019-2020 ( ' + playerData.player.team + ' )';
@@ -52,10 +53,12 @@ async function createChart() {
 
 }
 
-async function getPlayer() {
-    xlabels = [];
-    ydata = [];
-    const name = prompt('Enter player name, ex: Lebron James');
+async function getPlayer(name) {
+    let xlabels = [];
+    let ydata = [];
+    let multiPlayersCheck = {};
+    let playerInfo = {};
+    let playerStats = {};
 
     try {
         const urlPlayer = 'https://www.balldontlie.io/api/v1/players?per_page=100&search=' + name;
@@ -72,9 +75,6 @@ async function getPlayer() {
         player = {
             "firstName": playerInfo.first_name,
             "lastName": playerInfo.last_name,
-            "position": playerInfo.position,
-            "heightFeet": playerInfo.height_feet,
-            "heightInches": playerInfo.height_inches,
             "team": playerInfo.team.full_name,
         }
 
@@ -98,7 +98,7 @@ async function getPlayer() {
         // search did not return a player
         if (error instanceof TypeError) {
             if (playerInfo == undefined) {
-                alert('No information was found for ' + name);
+                alert('No information was found.');
                 for (x in xstats) {
                     xlabels.push(x);
                     ydata.push(0);
@@ -143,7 +143,6 @@ async function getPlayer() {
                     'Field Goals Made', 'Turnovers'];
             }
         }
-        console.log(error);
     }
     return { player, xlabels, ydata };
 }
