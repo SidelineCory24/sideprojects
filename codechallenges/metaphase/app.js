@@ -5,7 +5,7 @@ async function createChart() {
     const playerData = await getPlayer(name);
     const context = document.getElementById("myChart").getContext("2d");
 
-    playerLabel = playerData.player.firstName + " " + playerData.player.lastName + " Stats: 2019-2020 ( " + playerData.player.team + " )";
+    const playerLabel = playerData.player.firstName + " " + playerData.player.lastName + " Stats: 2019-2020 ( " + playerData.player.team + " )";
 
     // Handles glitch where multiple results would appear
     if (myChart) {
