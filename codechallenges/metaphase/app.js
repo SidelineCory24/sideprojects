@@ -68,7 +68,7 @@ async function getPlayer(name) {
         playerInfo = info.data[0];
 
         urlStats = "https://www.balldontlie.io/api/v1/season_averages/?seasons[]=2019&player_ids[]=" + playerInfo.id;
-        const responseStats = await fetch(urlStats)
+        const responseStats = await fetch(urlStats);
         const stats = await responseStats.json();
         playerStats = stats.data[0];
 
