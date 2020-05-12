@@ -1,8 +1,8 @@
 let myChart;
 
 async function createChart() {
-    const name = document.getElementById("playerSearch").value;
-    const playerData = await getPlayer(name);
+    const playerName = document.getElementById("playerSearch").value;
+    const playerData = await getPlayer(playerName);
     const context = document.getElementById("myChart").getContext("2d");
     const playerLabel = playerData.player.firstName + " " +
         playerData.player.lastName + " Stats: 2019-2020 ( " + playerData.player.team + " )";
@@ -53,7 +53,7 @@ async function createChart() {
 
 }
 
-async function getPlayer(name) {
+async function getPlayer(playerName) {
     let xlabels = [];
     let ydata = [];
     let multiPlayersCheck = {};
@@ -61,7 +61,7 @@ async function getPlayer(name) {
     let playerStats = {};
 
     try {
-        const urlPlayer = "https://www.balldontlie.io/api/v1/players?per_page=100&search=" + name;
+        const urlPlayer = "https://www.balldontlie.io/api/v1/players?per_page=100&search=" + playerName;
         const responsePlayer = await fetch(urlPlayer);
         const info = await responsePlayer.json();
         multiPlayersCheck = info.data;
@@ -111,7 +111,7 @@ async function getPlayer(name) {
 
             // search returned a player without any stats
             if (playerStats == undefined && multiPlayersCheck.length == 1) {
-                alert(name + " does not have any stats for the 2019-2020 season")
+                alert(playerName + " does not have any stats for the 2019-2020 season")
                 for (x in xstats) {
                     xlabels.push(x);
                     ydata.push(0);
