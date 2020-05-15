@@ -49,13 +49,13 @@ def daily_tweets(*tweets):
 
     for tweet in tweets:
         for t in tweet:
-            if count != len(tweet[t]):
+            if count != len(tweet):
                 print(f'Tweeting Tweet #{count}: {t.capitalize()} Tweet')
                 api.update_status(tweet[t])
                 count += 1
                 time.sleep(480)
             else:
-                print(f'Tweeting Tweet #{count + 1}: {t.capitalize()}')
+                print(f'Tweeting Tweet #{count}: {t.capitalize()}')
                 api.update_status(tweet[t])
 
     print('Tweets are complete.')
