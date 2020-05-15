@@ -55,7 +55,7 @@ def daily_tweets(*tweets):
                 count += 1
                 time.sleep(480)
             else:
-                print(f'Tweeting Tweet #{count}: {t.capitalize()}')
+                print(f'Tweeting Tweet #{count}: {t.capitalize()} Tweet')
                 api.update_status(tweet[t])
 
     print('Tweets are complete.')
